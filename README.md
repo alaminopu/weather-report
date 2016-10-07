@@ -1,6 +1,6 @@
-# Weather Status based on Geo location. 
+# Weather status based on Geolocation. 
 
-This is a simple angular project to get current weather status by using coordinates or City name. Public API to get the weather data - [http://openweathermap.org/current](http://openweathermap.org/current) 
+This is a simple angular project to get current weather status by using coordinates or city name. Public API to get the weather data - [http://openweathermap.org/current](http://openweathermap.org/current) 
 
 
 ## Updating Tools and Packages
