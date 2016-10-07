@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head ng-controller="AppCtrl as appCtrl">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title ng-bind="appCtrl.pageTitle"></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="bower_components/fontawesome/css/font-awesome.css" />
+
+  <link rel="stylesheet" href="css/app.css">
+
+</head>
+<body>
+
+  <div class="container" ui-view="main"></div>
+
+
+  <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+  <!-- Load Services First -->
+  <script type="text/javascript" src="common/geoLocation.module.js"></script>
+  <script type="text/javascript" src="common/geoLocation.service.js"></script>
+
+  <script type="text/javascript" src="home/home.module.js"></script>
+  <script type="text/javascript" src="home/home.route.js"></script>
+  <script type="text/javascript" src="home/home.js"></script>
+
+
+  <script type="text/javascript" src="app.module.js"></script>
+  <script type="text/javascript" src="app.route.js"></script>
+  <script type="text/javascript" src="app.controller.js"></script>
+
+</body>
+</html>

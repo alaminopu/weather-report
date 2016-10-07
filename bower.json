@@ -1,0 +1,16 @@
+{
+  "name": "angular-seed-styleguided",
+  "description": "A starter project for AngularJS",
+  "version": "0.0.1",
+  "homepage": "https://github.com/jshlyd/angular-seed-styleguided",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+  	"angular": "~1.4.0",
+  	"angular-bootstrap": "~0.13",
+    "angular-mocks": "~1.4.0",
+  	"angular-ui-router": "~0.2",
+    "bootstrap": "~3.1",
+    "fontawesome": "~4.2.0"
+  }
+}
