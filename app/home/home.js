@@ -15,6 +15,7 @@
 
         var vm = this;
         vm.countries = countryHelper;
+        vm.report = {};
 
         // default value
         vm.zipCode = '94040';
@@ -28,6 +29,7 @@
             .getWeatherReportByCoordinates(lat, lon)
             .then(function(data){
                 console.log(data);
+                vm.report = data;
             });
         };
 
@@ -59,7 +61,7 @@
                 weatherReportService
                 .getWeatherReportByZipCode(vm.zipCode, vm.countryCode)
                 .then(function(data){
-                    console.log(data);
+                    vm.report = data;
                 });
 
             }, function () {

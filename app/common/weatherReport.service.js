@@ -22,14 +22,15 @@
         function getWeatherReportByCoordinates(lat, lon) {
             var deferred = $q.defer();
 
-            $http.get('http://api.openweathermap.org/data/2.5/weather?lat='+lat+ '&lon=' + lon +'&appid=' + appid)
+            $http.get('http://api.openweathermap.org/data/2.5/weather?lat='+lat+ '&lon=' + lon +'&appid=' + appid + '&units=imperial')
             .success(function(data) { 
                 deferred.resolve({
                     weather: data.weather,
                     main: data.main,
                     wind: data.wind,
                     rain: data.rain,
-                    clouds: data.clouds
+                    clouds: data.clouds,
+                    name: data.name
                 });
             }).error(function(msg, code) {
                 deferred.reject(msg);
@@ -42,14 +43,15 @@
         function getWeatherReportByZipCode(zipCode, countryCode){
             var deferred = $q.defer();
 
-            $http.get('http://api.openweathermap.org/data/2.5/weather?zip='+ zipCode + ',' + countryCode +'&appid=' + appid)
+            $http.get('http://api.openweathermap.org/data/2.5/weather?zip='+ zipCode + ',' + countryCode +'&appid=' + appid + '&units=imperial')
             .success(function(data) { 
                 deferred.resolve({
                     weather: data.weather,
                     main: data.main,
                     wind: data.wind,
                     rain: data.rain,
-                    clouds: data.clouds
+                    clouds: data.clouds,
+                    name: data.name
                 });
             }).error(function(msg, code) {
                 deferred.reject(msg);
