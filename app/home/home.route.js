@@ -1,4 +1,6 @@
 (function () {
+    'use strict';
+    
     angular.module('myApp.home')
         .config(['$stateProvider', function config($stateProvider) {
             $stateProvider.state('home', {

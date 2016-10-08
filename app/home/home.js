@@ -1,13 +1,14 @@
 (function () {
+    'use strict';
 
     angular.module('myApp.home')
         .controller('HomeCtrl',  HomeController);
 
-    HomeController.$inject = ['geoLocationService'];
+    HomeController.$inject = ['$uibModal', 'geoLocationService'];
 
-    function HomeController(geoLocationService) {
+    function HomeController($uibModal, geoLocationService) {
 
-        vm = this;
+        var vm = this;
 
         geoLocationService.getCurrentPosition().then(
         	function(position){
@@ -15,6 +16,14 @@
         	},
         	function(error){
         		console.log(error);
+                var modalInstance = $uibModal.open({
+                    animation: true,
+                    ariaLabelledBy: 'modal-title',
+                    ariaDescribedBy: 'modal-body',
+                    templateUrl: 'home/modal.tpl.html',
+                    controller: 'ModalInstanceCtrl',
+                    controllerAs: 'modalCtrl'
+                });
         	}
         )
 

@@ -3,3 +3,7 @@
 .container{
   margin-top: 10px;
 }
+
+.modal-dismiss{
+	cursor: pointer;
+}

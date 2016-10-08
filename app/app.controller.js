@@ -1,4 +1,6 @@
 (function () {
+    'use strict';
+    
     angular.module('myApp')
         .controller('AppCtrl', AppController);
 
@@ -6,7 +8,7 @@
 
     function AppController($log, $state, $rootScope, $scope, $location) {
 
-        vm = this;
+        var vm = this;
         vm.pageTitle ='Weather Status';
 
         $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
