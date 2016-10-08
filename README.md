@@ -3,20 +3,20 @@
 This is a simple angular project to get current weather report by using coordinates or zip code. Public API to get the weather data - [http://openweathermap.org/current](http://openweathermap.org/current) 
 
 
-## Updating Tools and Packages
+## Installing Tools and Packages
 
-You can update the tool dependencies by running:
+You can install the tool dependencies by running:
 
 ```
-npm update
+npm install
 ```
 
 This will find the latest versions that match the version ranges specified in the `package.json` file.
 
-You can update the Angular dependencies by running:
+You can install the Angular dependencies by running:
 
 ```
-bower update
+bower install
 ```
 
 This will find the latest versions that match the version ranges specified in the `bower.json` file.
