@@ -17,8 +17,8 @@ describe('my app', function() {
 
 
         it('should render home when user navigates to /home', function() {
-            expect(element.all(by.css('h2')).first().getText()).
-                toMatch("I am Kaiser Sose");
+            expect(element.all(by.css('h1')).first().getText()).
+                toMatch("WEATHER REPORT");
         });
 
     });

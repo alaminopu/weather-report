@@ -26,6 +26,13 @@ body {
   margin-top: 10px;
 }
 
+h1{
+  margin: 0 0 36px;
+  color: #777777;
+  font-size: 100px;
+  text-transform: uppercase;
+}
+
 #weather {
   width: 600px;
   margin: 0px auto;

@@ -16,13 +16,6 @@ describe('home section', function () {
             var homeCtrl = $controller('HomeCtrl', {$scope: scope});
 
             expect(homeCtrl).toBeDefined();
-            expect(homeCtrl.name).toBeDefined();
-            expect(homeCtrl.number).toBeDefined();
-
-            expect(homeCtrl.name).toBe('Kaiser Sose');
-            expect(homeCtrl.number).toBe('867-5309');
-
-
         });
     });
 });
