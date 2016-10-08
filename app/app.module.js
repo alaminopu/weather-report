@@ -3,6 +3,7 @@
 	
     angular.module('myApp', [
         'ui.router',
+        'ngSanitize',
         'myApp.home'
     ]);
 })();

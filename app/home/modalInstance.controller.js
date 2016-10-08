@@ -4,11 +4,13 @@
     angular.module('myApp.home')
         .controller('ModalInstanceCtrl',  ModalInstanceController);
 
-    ModalInstanceController.$inject = ['$uibModalInstance'];
+    ModalInstanceController.$inject = ['$uibModalInstance', 'countries'];
 
-    function ModalInstanceController($uibModalInstance) {
+    function ModalInstanceController($uibModalInstance, countries) {
 
         var vm = this;
+        vm.countries = countries;
+        vm.form = {};
 
         vm.cancel = function () {
             $uibModalInstance.dismiss('cancel');

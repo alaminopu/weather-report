@@ -5,8 +5,20 @@
 <div class="modal-body" id="modal-body">
     <form role="form">
         <div class="form-group">
-            <label for="zip-code">Zip Code:</label>
-            <input type="text" class="form-control" id="zip-code">
+            <label for="zip-code">Zip Code</label>
+            <input type="text" ng-model="form.zipCode" class="form-control" id="zip-code">
+        </div>
+
+        <div class="form-group">
+            <label for="country">Country</label>
+            <ui-select ng-model="form.country">
+                <ui-select-match allow-clear="true">
+                    <span ng-bind="$select.selected.name"></span>
+                </ui-select-match>
+                <ui-select-choices repeat="country.alpha2 | lowercase as country in modalCtrl.countries | filter: $select.search">
+                    <span ng-bind-html="country.name | highlight: $select.search"></span>
+                </ui-select-choices>
+            </ui-select>
         </div>
         <button type="submit" class="btn btn-primary">Save</button>
     </form>

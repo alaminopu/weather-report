@@ -4,11 +4,12 @@
     angular.module('myApp.home')
         .controller('HomeCtrl',  HomeController);
 
-    HomeController.$inject = ['$uibModal', 'geoLocationService'];
+    HomeController.$inject = ['$uibModal', 'geoLocationService', 'countryHelper'];
 
-    function HomeController($uibModal, geoLocationService) {
+    function HomeController($uibModal, geoLocationService, countryHelper) {
 
         var vm = this;
+        vm.countries = countryHelper;
 
         geoLocationService.getCurrentPosition().then(
         	function(position){
@@ -22,7 +23,12 @@
                     ariaDescribedBy: 'modal-body',
                     templateUrl: 'home/modal.tpl.html',
                     controller: 'ModalInstanceCtrl',
-                    controllerAs: 'modalCtrl'
+                    controllerAs: 'modalCtrl',
+                    resolve: {
+                        countries: function () {
+                          return vm.countries;
+                        }
+                    }
                 });
         	}
         )
