@@ -6,7 +6,8 @@
         'ui.bootstrap',
         'ui.select',
         'myApp.service.geoLocation',
-        'myApp.service.country'
+        'myApp.service.country',
+        'myApp.service.weatherReport'
     ]);
 
 })();

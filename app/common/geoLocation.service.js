@@ -18,19 +18,19 @@
         // Implementation Details
 
         function getCurrentPosition() {
-            var deffered = $q.defer();
+            var deferred = $q.defer();
 
             if(!$window.navigator.geolocation){
-                deffered.reject('Geolocation not supported')
+                deferred.reject('Geolocation not supported')
             }else{
                 $window.navigator.geolocation.getCurrentPosition(function(position){
-                    deffered.resolve(position);
+                    deferred.resolve(position);
                 },function(error){
-                    deffered.reject(error);
+                    deferred.reject(error);
                 });
             }
 
-            return deffered.promise;
+            return deferred.promise;
         };
     }
 })();
