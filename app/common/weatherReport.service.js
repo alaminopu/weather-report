@@ -39,10 +39,10 @@
             return deferred.promise;
         };
 
-        function getWeatherReportByZipCode(zip_code, country_code){
+        function getWeatherReportByZipCode(zipCode, countryCode){
             var deferred = $q.defer();
 
-            $http.get('http://api.openweathermap.org/data/2.5/weather?zip='+ zip_code + ',' + country_code +'&appid=' + appid)
+            $http.get('http://api.openweathermap.org/data/2.5/weather?zip='+ zipCode + ',' + countryCode +'&appid=' + appid)
             .success(function(data) { 
                 deferred.resolve({
                     weather: data.weather,

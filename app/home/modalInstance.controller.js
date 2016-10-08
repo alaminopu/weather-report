@@ -12,6 +12,10 @@
         vm.countries = countries;
         vm.form = {};
 
+        vm.save = function(){
+            $uibModalInstance.close(vm.form);
+        };
+
         vm.cancel = function () {
             $uibModalInstance.dismiss('cancel');
         };

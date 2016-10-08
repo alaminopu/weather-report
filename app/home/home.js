@@ -16,16 +16,27 @@
         var vm = this;
         vm.countries = countryHelper;
 
+        // default value
+        vm.zipCode = '94040';
+        vm.countryCode = 'us';
+
         var getWeatherReportByCoordinate = function(position){
             var lat = position.coords.latitude;
             var lon = position.coords.longitude;
 
-            weatherReportService.getWeatherReportByCoordinates(lat, lon).then(function(data){
+            weatherReportService
+            .getWeatherReportByCoordinates(lat, lon)
+            .then(function(data){
                 console.log(data);
             });
         };
 
         var getWeatherReportByZipCode = function(error){
+
+            if(error.code !== 1){
+                console.log(error.message);
+            }
+
             var modalInstance = $uibModal.open({
                 animation: true,
                 ariaLabelledBy: 'modal-title',
@@ -33,6 +44,7 @@
                 templateUrl: 'home/modal.tpl.html',
                 controller: 'ModalInstanceCtrl',
                 controllerAs: 'modalCtrl',
+                backdrop: 'static',
                 resolve: {
                     countries: function () {
                       return vm.countries;
@@ -40,11 +52,18 @@
                 }
             });
 
-            var zip_code = '94040';
-            var country_code = 'us';
+            modalInstance.result.then(function (formData) {
+                vm.zipCode = formData.zipCode;
+                vm.countryCode = formData.countryCode;
 
-            weatherReportService.getWeatherReportByZipCode(zip_code, country_code).then(function(data){
-                console.log(data);
+                weatherReportService
+                .getWeatherReportByZipCode(vm.zipCode, vm.countryCode)
+                .then(function(data){
+                    console.log(data);
+                });
+
+            }, function () {
+                console.info('Modal dismissed at: ' + new Date());
             });
         };
 
